@@ -4,9 +4,9 @@
 
 ##Quem somos nós
 
-[Djian Lucca Stiegelmaier](https://github.com/djianlucca)
-[Jair Daniel Junior](https://github.com/jairdj)
-[Marcos Eduardo P. Pereira](https://github.com/etternum)
+* [Djian Lucca Stiegelmaier](https://github.com/djianlucca)
+* [Jair Daniel Junior](https://github.com/jairdj)
+* [Marcos Eduardo P. Pereira](https://github.com/etternum)
 
 ##Novidades e Atualizações
 
