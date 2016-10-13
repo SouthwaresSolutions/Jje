@@ -101,10 +101,10 @@ $resp = $nfe->tagide($cUF, $cNF, $natOp, $indPag, $mod, $serie, $nNF, $dhEmi, $d
 //$resp = $nfe->tagrefECF($mod, $nECF, $nCOO);
 
 //Dados do emitente - (Importando dados do config.json)
-$CNPJ = $nfeTools->aConfig['cnpj'];
+$CNPJ = $nfeTools->aConfig['cnpj']; // CNPJ Emitente
 $CPF = ''; // Utilizado para CPF na nota
-$xNome = $nfeTools->aConfig['razaosocial'];
-$xFant = $nfeTools->aConfig['nomefantasia'];
+$xNome = $nfeTools->aConfig['razaosocial']; // Nome Emitente
+$xFant = $nfeTools->aConfig['nomefantasia']; // Nome Fantasia Emitente
 $IE = $nfeTools->aConfig['ie'];
 $IEST = $nfeTools->aConfig['iest'];
 $IM = $nfeTools->aConfig['im'];
@@ -113,35 +113,35 @@ $CRT = $nfeTools->aConfig['regime'];
 $resp = $nfe->tagemit($CNPJ, $CPF, $xNome, $xFant, $IE, $IEST, $IM, $CNAE, $CRT);
 
 //endereço do emitente
-$xLgr = 'Av. Rio de Janeiro';
-$nro = 's/n';
-$xCpl = 'Qd. 38 Lt. 4,5 e 34';
-$xBairro = 'Jardim Pinheiros I';
-$cMun = '5200258';
-$xMun = 'Águas Lindas de Goiás';
-$UF = 'GO';
-$CEP = '72910000';
-$cPais = '1058';
-$xPais = 'Brasil';
-$fone = '6239324097';
+$xLgr = 'AV ORESTES CLEMENTE DA SERRA'; // Logradouro Emitente
+$nro = '1949'; // Numero endereço Emitente
+$xCpl = ''; // Complemento
+$xBairro = 'VL SAO JORGE'; // Bairro Emitente
+$cMun = '4304630'; // Código municipio do Emitente segundo IBGE
+$xMun = 'CAPAO DA CANOA'; // Nome Municipio do Emitente
+$UF = 'RS'; // UF do Emitente
+$CEP = '95555000'; // CEP do Emitente
+$cPais = '1058'; // Código Pais
+$xPais = 'Brasil'; // Nome do Pais do Emitente
+$fone = '5198169296'; // Numero de telefone do Emitente
 $resp = $nfe->tagenderEmit($xLgr, $nro, $xCpl, $xBairro, $cMun, $xMun, $UF, $CEP, $cPais, $xPais, $fone);
         
 //destinatário
-$CNPJ = '23401454000170';
+$CNPJ = '';
 $CPF = '';
 $idEstrangeiro = '';
-$xNome = 'Chinnon Santos - Tecnologia e Assessoria em Softwares';
-$indIEDest = '1';
-$IE = '';
+$xNome = 'Nome do Destinátario';
+$indIEDest = '';
+$IE = 'ISENTO'; //* Verificar qual envio correto no caso de sem inscrição estadual (Envio do Campo Obrigatório) 
 $ISUF = '';
-$IM = '4128095';
-$email = 'nfe@chinnonsantos.com';
+$IM = '';
+$email = '';
 $resp = $nfe->tagdest($CNPJ, $CPF, $idEstrangeiro, $xNome, $indIEDest, $IE, $ISUF, $IM, $email);
 
 //Endereço do destinatário
-$xLgr = 'Av. Vila Alpes';
-$nro = 's/n';
-$xCpl = '';
+$xLgr = ''; // Logradouro do Destinatario 
+$nro = ''; // Numero do logradouro do Destinatario
+$xCpl = ''; 
 $xBairro = 'Vila Alpes';
 $cMun = '5208707';
 $xMun = 'Goiânia';
@@ -188,7 +188,7 @@ foreach ($aAut as $aut) {
 
 //produtos 1 (Limite da API é de 56 itens por Nota)
 $aP[] = array(
-        'nItem' => 1,
+        'nItem' => 1, // criar contador n Item
         'cProd' => '15',
         'cEAN' => '97899072659522',
         'xProd' => 'Chopp Pilsen - Barril 30 Lts',
@@ -211,31 +211,7 @@ $aP[] = array(
         'xPed' => '16',
         'nItemPed' => '1',
         'nFCI' => '');
-//produtos 2        
-$aP[] = array(
-        'nItem' => 2,
-        'cProd' => '56',
-        'cEAN' => '7896030801822',
-        'xProd' => 'Copo Personalizado Klima 300ml',
-        'NCM' => '39241000',
-        'EXTIPI' => '',
-        'CFOP' => '5102',
-        'uCom' => 'Cx',
-        'qCom' => '2',
-        'vUnCom' => '180.00',
-        'vProd' => '360.00',
-        'cEANTrib' => '',
-        'uTrib' => 'Cx',
-        'qTrib' => '2',
-        'vUnTrib' => '180.00',
-        'vFrete' => '',
-        'vSeg' => '',
-        'vDesc' => '',
-        'vOutro' => '',
-        'indTot' => '1',
-        'xPed' => '16',
-        'nItemPed' => '2',
-        'nFCI' => '');
+
 
 foreach ($aP as $prod) {
     $nItem = $prod['nItem'];
