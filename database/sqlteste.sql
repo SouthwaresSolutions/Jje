@@ -1,32 +1,3 @@
-create table emitente(
-	id_emit int auto_increment not null primary key,
-    razao_social varchar(120) not null,
-    cnpj varchar(14),
-    inscricao_est varchar(12),
-    regime_trib int,
-    rua varchar(120),
-    numero varchar(5),
-    bairro varchar(30),
-    cep varchar(9),
-    fone varchar(14),
-    idcidade int not null,
-    idestado int not null,
-    foreign key (idcidade)
-		references cidade(id)
-			on delete restrict
-            on update cascade,
-	foreign key (idestado)
-		references estado(id)
-			on delete restrict
-            on update cascade
-);
-
-insert into emitente (razao_social, cnpj, inscricao_est, regime_trib, rua, numero, bairro, cep, fone, idcidade, idestado)
-values ('JJE COM DE PROD ORTOPEDICOS LTDA ME', '23211732000126', '2340109447', 1, 'AV ORESTES CLEMENTE DA SERRA', '1949', 'VL SAO JORGE', '95555-000', '(51)9816-9296', 3932, 23);
-
-select * from emitente;
-
-
 CREATE TABLE IF NOT EXISTS `pais` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(60) DEFAULT NULL,
@@ -35,7 +6,6 @@ CREATE TABLE IF NOT EXISTS `pais` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 INSERT INTO `pais` (`id`, `nome`, `sigla`) VALUES (1, 'Brasil', 'BR');
-select * from pais;
 
 CREATE TABLE IF NOT EXISTS `estado` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -46,7 +16,6 @@ CREATE TABLE IF NOT EXISTS `estado` (
   PRIMARY KEY (`id`),
   KEY `fk_Estado_pais` (`pais`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=28 ;
-drop table estado;
 
 INSERT INTO `estado` (`id`, `nome`, `uf`, `pais`,`coduf`) VALUES
 (1, 'Acre', 'AC', 1,12),
@@ -76,12 +45,6 @@ INSERT INTO `estado` (`id`, `nome`, `uf`, `pais`,`coduf`) VALUES
 (25, 'Sergipe', 'SE', 1,28),
 (26, 'São Paulo', 'SP', 1,35),
 (27, 'Tocantins', 'TO', 1,17);
-
-select * from estado;
-
-
-
-
 
 
 CREATE TABLE IF NOT EXISTS `cidade` (
@@ -5663,4 +5626,29 @@ INSERT INTO `cidade` (`id`, `nome`, `estado`) VALUES
 (5563, 'Wanderlândia', 27),
 (5564, 'Xambioá', 27);
 
-select * from cidade;
+create table emitente(
+	id_emit int auto_increment not null primary key,
+    razao_social varchar(120) not null,
+    cnpj varchar(14),
+    inscricao_est varchar(12),
+    regime_trib int,
+    rua varchar(120),
+    numero varchar(5),
+    bairro varchar(30),
+    cep varchar(9),
+    fone varchar(14),
+    idcidade int not null,
+    idestado int not null,
+    foreign key (idcidade)
+		references cidade(id)
+			on delete restrict
+            on update cascade,
+	foreign key (idestado)
+		references estado(id)
+			on delete restrict
+            on update cascade
+);
+
+insert into emitente (razao_social, cnpj, inscricao_est, regime_trib, rua, numero, bairro, cep, fone, idcidade, idestado)
+values ('JJE COM DE PROD ORTOPEDICOS LTDA ME', '23211732000126', '2340109447', 1, 'AV ORESTES CLEMENTE DA SERRA', '1949', 'VL SAO JORGE', '95555-000', '(51)9816-9296', 3932, 23);
+
