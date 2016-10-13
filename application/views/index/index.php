@@ -161,49 +161,42 @@
                 <div class="col-md-12">
                   <div class="row">
                     <div class="form-group col-md-12">
-                      <label>Descrição</label>
-                      <input name="xProd" type="text" class="form-control" placeholder="Descrição">
+                      <label for="xProd" >Descrição</label>
+                      <input name="xml[xProd]" id="xProd" type="text" class="form-control" placeholder="Descrição">
                     </div>                    
                     <div class="form-group col-md-6">
-                      <label>Código</label>
-                      <input name="cProd" type="text" class="form-control" placeholder="Código">
+                      <label for="cProd">Código</label>
+                      <input name="xml[cProd]" id="cProd" type="text" class="form-control" placeholder="Código">
                     </div>
                     <div class="form-group col-md-6">
-                      <label>Grupo Cfop</label>
-                      <select class="form-control">
-                        <option>Venda de mercadoria</option>
-                        <option>Retorno de mercadoria</option>
-                      </select>
+                      <label for="NCM">NCM</label>
+                      <input name="xml[NCM]" id="NCM" type="text" class="form-control" placeholder="Ncm">
                     </div>
                   </div>
                   <div class="row">
-                    <div class="form-group col-md-4">
-                      <label>NCM</label>
-                      <input type="text" class="form-control" placeholder="Ncm">
+                    <div class="form-group col-md-6">
+                      <label for="uCom" >Unidade comercial</label>
+                      <input name="xml[uCom]" id="uCom" type="text" class="form-control" placeholder="Und">
                     </div>
-                    <div class="form-group col-md-4">
-                      <label>Unidade comercial</label>
-                      <input type="text" class="form-control" placeholder="Und">
-                    </div>
-                    <div class="form-group col-md-4">
-                      <label>Quantidade comercial</label>
-                      <input type="text" class="form-control" placeholder="Qtd">
+                    <div class="form-group col-md-6">
+                      <label for="qCom" >Quantidade comercial</label>
+                      <input name="xml[qCom]" id="qCom" type="text" class="form-control" placeholder="Qtd">
                     </div>
                   </div>
                   <div class="row">
                     <div class="col-md-6">
-                      <label>Valor unitario comercial</label>
+                      <label for="vUnCom" >Valor unitario comercial</label>
                       <div class="input-group">
                         <span class="input-group-addon">R$</span>
-                        <input type="text" class="form-control">
+                        <input name="xml[vUnCom]" id="vUnCom" type="text" class="form-control">
                         <span class="input-group-addon">.00</span>
                       </div>
                     </div>
                     <div class="col-md-6">
-                      <label>Valor produto</label>
+                      <label for="vProd" >Valor produto</label>
                       <div class="input-group">
                         <span class="input-group-addon">R$</span>
-                        <input type="text" class="form-control">
+                        <input name="xml[vProd]" id="vProd" type="text" class="form-control">
                         <span class="input-group-addon">.00</span>
                       </div>
                     </div>
