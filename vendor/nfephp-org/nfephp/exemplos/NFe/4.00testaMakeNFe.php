@@ -11,13 +11,13 @@ $nfe = new MakeNFe();
 $nfeTools = new ToolsNFe('../../config/config.json');
 
 //Dados da NFe - infNFe
-$cUF = '52'; //codigo numerico do estado
+$cUF = '43'; //codigo numerico do estado
 $cNF = '00000010'; //numero aleatório da NF
 $natOp = 'Venda de Produto'; //natureza da operação
 $indPag = '1'; //0=Pagamento à vista; 1=Pagamento a prazo; 2=Outros
-$mod = '55'; //modelo da NFe 55 ou 65 essa última NFCe
-$serie = '1'; //serie da NFe
-$nNF = '10'; // numero da NFe
+$mod = '55'; //modelo da NFe 55 ou 65 essa última NFCe *
+$serie = '1'; //serie da NFe *
+$nNF = '10'; // numero da NFe *
 $dhEmi = date("Y-m-d\TH:i:sP");//Formato: “AAAA-MM-DDThh:mm:ssTZD” (UTC - Universal Coordinated Time).
 $dhSaiEnt = date("Y-m-d\TH:i:sP");//Não informar este campo para a NFC-e.
 $tpNF = '1';
