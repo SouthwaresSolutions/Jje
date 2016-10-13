@@ -1,21 +1,29 @@
+CREATE SCHEMA `jje_erp`;
+
+USE `jje_erp`;
+
 CREATE TABLE IF NOT EXISTS pais (
-  id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
-  nome VARCHAR(60) DEFAULT NULL,
-  sigla VARCHAR(10) DEFAULT NULL,
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+  id_pais INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+  nome_pais VARCHAR(60) NOT NULL,
+  sigla VARCHAR(10) NOT NULL
+) ENGINE=InnoDB;
+
+INSERT INTO pais (nome_pais, sigla) VALUES
+('Brasil', 'BR');
 
 CREATE TABLE IF NOT EXISTS estado (
-  id int(11) NOT NULL AUTO_INCREMENT,
-  nome varchar(75) DEFAULT NULL,
-  uf varchar(5) DEFAULT NULL,
-  pais int(7) DEFAULT NULL,
-  coduf int(7) default null,
-  PRIMARY KEY (id),
-  KEY fk_Estado_pais (pais)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=28 ;
+  id_estado INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  nome_estado VARCHAR(75) NOT NULL,
+  uf VARCHAR(5) NOT NULL,
+  cod_pais INT NOT NULL,
+  cod_uf INT(11) NOT NULL,
+  FOREIGN KEY (cod_pais)
+	REFERENCES pais(id_pais)
+		ON DELETE RESTRICT
+        ON UPDATE CASCADE
+) ENGINE=InnoDB;
 
-
-INSERT INTO `estado` (`id`, `nome`, `uf`, `pais`,`coduf`) VALUES
+INSERT INTO estado (id_estado, nome_estado, uf, cod_pais, cod_uf) VALUES
 (1, 'Acre', 'AC', 1,12),
 (2, 'Alagoas', 'AL', 1,27),
 (3, 'Amazonas', 'AM', 1,13),
@@ -45,16 +53,14 @@ INSERT INTO `estado` (`id`, `nome`, `uf`, `pais`,`coduf`) VALUES
 (27, 'Tocantins', 'TO', 1,17);
 
 CREATE TABLE IF NOT EXISTS municipio (
-	id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
-	cod_municipio INT(11) NOT NULL,
+	id_municipio INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+	cod_municipio INT NOT NULL,
 	cod_uf INT(11) NOT NULL,
-	FOREIGN KEY(cod_uf) REFERENCES estado(id) 
-		ON DELETE RESTRICT 
-		ON UPDATE CASCADE,
-	nome VARCHAR(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+    nome_municipio VARCHAR(100) NOT NULL,
+    KEY fk_municipio_uf (cod_uf)
+) ENGINE=InnoDB;
 
-INSERT INTO municipio (cod_municipio, cod_uf, nome) VALUES
+INSERT INTO municipio (cod_municipio, cod_uf, nome_municipio) VALUES
 (1100015, 11, 'ALTA FLORESTA DOESTE'),
 (1100023, 11, 'ARIQUEMES'),
 (1100031, 11, 'CABIXI'),
@@ -1782,7 +1788,8 @@ INSERT INTO municipio (cod_municipio, cod_uf, nome) VALUES
 (2706901, 27, 'PILAR'),
 (2707008, 27, 'PINDOBA'),
 (2707107, 27, 'PIRANHAS');
-INSERT INTO municipio (cod_municipio, cod_uf, nome) VALUES
+
+INSERT INTO municipio (cod_municipio, cod_uf, nome_municipio) VALUES
 (2707206, 27, 'POCO DAS TRINCHEIRAS'),
 (2707305, 27, 'PORTO CALVO'),
 (2707404, 27, 'PORTO DE PEDRAS'),
@@ -3541,7 +3548,8 @@ INSERT INTO municipio (cod_municipio, cod_uf, nome) VALUES
 (3519006, 35, 'HERCULANDIA'),
 (3519055, 35, 'HOLAMBRA'),
 (3519071, 35, 'HORTOLANDIA');
-INSERT INTO municipio (cod_municipio, cod_uf, nome) VALUES
+
+INSERT INTO municipio (cod_municipio, cod_uf, nome_municipio) VALUES
 (3519105, 35, 'IACANGA'),
 (3519204, 35, 'IACRI'),
 (3519253, 35, 'IARAS'),
@@ -5300,7 +5308,8 @@ INSERT INTO municipio (cod_municipio, cod_uf, nome) VALUES
 (5105150, 51, 'JUINA'),
 (5105176, 51, 'JURUENA'),
 (5105200, 51, 'JUSCIMEIRA');
-INSERT INTO municipio (cod_municipio, cod_uf, nome) VALUES
+
+INSERT INTO municipio (cod_municipio, cod_uf, nome_municipio) VALUES
 (5105234, 51, 'LAMBARI D''OESTE'),
 (5105259, 51, 'LUCAS DO RIO VERDE'),
 (5105309, 51, 'LUCIARA'),
