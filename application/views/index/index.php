@@ -34,26 +34,6 @@
       <!-- Formulário -->  
       <form>
 
-      <!-- Exemplo
-        <div class="form-group">
-          <label for="exampleInputEmail1">Email address</label>
-          <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Email">
-        </div>
-        <div class="form-group">
-          <label for="exampleInputPassword1">Password</label>
-          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-        </div>
-        <div class="form-group">
-          <label for="exampleInputFile">File input</label>
-          <input type="file" id="exampleInputFile">
-          <p class="help-block">Example block-level help text here.</p>
-        </div>
-        <div class="checkbox">
-          <label>
-            <input type="checkbox"> Check me out
-          </label>
-        </div>
-      -->
         <div class="row">
           
           <div class="col-md-10 col-md-offset-1">
@@ -63,25 +43,25 @@
               <div class="row">
                 <div class="form-group col-md-4">
                   <label>Tipo de operação</label>
-                  <select class="form-control">
-                    <option>Interna</option>
-                    <option>Interestadual</option>
-                    <option>Exterior</option>
+                  <select name="idDest" class="form-control">
+                    <option value="1">Interna</option>
+                    <option value="2">Interestadual</option>
+                    <option value="3">Exterior</option>
                   </select>
                 </div>
 
                 <div class="form-group col-md-4">
                   <label>Natureza da operação</label>
-                  <select class="form-control">
-                    <option>Venda mercadoria</option>
-                    <option>Remessa brinde</option>
+                  <select name="natOp" class="form-control">
+                    <option value="Venda de produto">Venda mercadoria</option>
+                    <option value="Remessa de mercadoria para brinde">Remessa brinde</option>
                   </select>
                 </div>
                 <div class="form-group col-md-4">
                   <label>Forma de pagamento</label>
-                  <select class="form-control">
-                    <option>À vista</option>
-                    <option>A prazo</option>
+                  <select name="indPag" class="form-control">
+                    <option value="0">À vista</option>
+                    <option value="1">A prazo</option>
                   </select>
                 </div>
               </div>
