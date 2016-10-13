@@ -10,6 +10,7 @@
     <!-- Bootstrap -->
     <link href="<?php echo base_url('assets/css/bootstrap.min.css'); ?>" rel="stylesheet">
 
+
   </head>
   <body>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -125,11 +126,20 @@
                         <input type="text" class="form-control" placeholder="Cep">
                       </div>
                       <div class="form-group col-md-3">
-                        <label>UF</label>
-                          <select class="form-control">
-                            <!-- Aqui vai o foreach de estados puxados do banco
-                              IMPORTANTE por o database no array de libraries do autoload-->
-                            <option>RS</option>
+
+
+                        <label for="country">Country: </label>
+                          <?php echo form_dropdown('country_id', $countries, '#', 'id="country"'); ?><br />
+                          <?php $cities['#'] = 'Please Select'; ?>
+                        <label for="city">City: </label>
+                          <?php echo form_dropdown('city_id', $cities, '#', 'id="cities"'); ?><br />
+
+
+                        <label for="uf">UF</label>
+                          <select class="form-control" name="xml[uf]">
+                            <?php foreach($ufList as $state): ?>
+                              <option value="<?= $state['id_estado'] ?>"><?= $state['uf'] ?></option>
+                            <?php endforeach;?>
                           </select>
                       </div>
                     </div>
