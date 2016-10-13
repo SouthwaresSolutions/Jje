@@ -5,9 +5,9 @@ class IndexController extends CI_Controller {
 	public function index()
 	{
 		$data['ufList'] = $this->StateModel->getAll();
-		$this->load->view('index/index');
+		$this->load->view('index/index', $data);
 	}
-
+	/*
 	public function indexPost(){
 
 		//Campos referente a NFE
@@ -42,13 +42,13 @@ class IndexController extends CI_Controller {
 
 			$signedXml = $this->NfeModel->signXml($this->NfeModel->createXml($this->input->post('xml')));
 
-			if($this->NfeModel->isSignatureValid($signedXml){
-				$this->NfeModel->
-			}else{
+			if($this->NfeModel->isSignatureValid($signedXml)){
 
+				$this->NfeModel->sendLote($signedXml);
 			}
 		}else{
 			header("refresh: 0;");
 		}
 	}
+	*/
 }
