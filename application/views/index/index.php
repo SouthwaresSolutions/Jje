@@ -45,7 +45,7 @@
                   <label>Tipo de operação</label>
                   <select name="idDest" class="form-control">
                     <option value="1">Interna</option>
-                    <option value="2">Interestadual</option>
+                    <option value="2">Interestadual</<option value=""></option>>
                     <option value="3">Exterior</option>
                   </select>
                 </div>
