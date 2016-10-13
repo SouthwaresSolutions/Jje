@@ -62,7 +62,7 @@
 
               <div class="row">
                 <div class="form-group col-md-4">
-                  <label>Tipo de o/peração</label>
+                  <label>Tipo de operação</label>
                   <select class="form-control">
                     <option>Interna</option>
                     <option>Interestadual</option>
@@ -179,8 +179,12 @@
             <fieldset>
               <legend><h3><b>Dados do produto</b></h3></legend>
               <div class="row">
-                <div class="col-md-7">
+                <div class="col-md-12">
                   <div class="row">
+                    <div class="form-group col-md-12">
+                      <label>Descrição</label>
+                      <input type="text" class="form-control" placeholder="Descrição">
+                    </div>                    
                     <div class="form-group col-md-6">
                       <label>Código</label>
                       <input type="text" class="form-control" placeholder="Código">
@@ -224,12 +228,6 @@
                         <span class="input-group-addon">.00</span>
                       </div>
                     </div>
-                  </div>
-                </div>
-                <div class="col-md-5">
-                  <div class="form-group col-md-12">
-                    <label>Descrição</label>
-                    <textarea class="form-control" rows="8"></textarea>
                   </div>
                 </div>
               </div>
