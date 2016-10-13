@@ -133,9 +133,9 @@
                     </div>
                     <div class="row">
                       <div class="form-group col-md-12">
-                        <label>Cidade</label>
+                        <label for="idMun" >Cidade</label>
                           <!-- idMun - Name referente a Cidade    -->
-                          <select name="idMun" class="form-control">
+                          <select name="xml[idMun]" id="idMun" class="form-control">
                             <option>Selecione sua cidade</option>
                             <!-- Aqui vai o foreach de estados puxados do banco
                               IMPORTANTE por o database no array de libraries do autoload-->
