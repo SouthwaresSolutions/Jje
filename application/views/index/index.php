@@ -126,18 +126,24 @@
                         <input type="text" class="form-control" placeholder="Cep">
                       </div>
                       <div class="form-group col-md-3">
+<<<<<<< HEAD
                         <label for="country">Country: </label>
                           <?php echo form_dropdown('country_id', $countries, '#', 'id="country"'); ?><br />
                           <?php $cities['#'] = 'Please Select'; ?>
                         <label for="city">City: </label>
                           <?php echo form_dropdown('city_id', $cities, '#', 'id="cities"'); ?><br />
+=======
+>>>>>>> c5c9e6fa1ca0c29dcbc318d3b7296f339d91eed5
                         <label for="uf">UF</label>
                           <select class="form-control" name="xml[uf]">
                             <?php foreach($ufList as $state): ?>
                               <option value="<?= $state['id_estado'] ?>"><?= $state['uf'] ?></option>
                             <?php endforeach;?>
+<<<<<<< HEAD
                         <label for="UF">UF</label>
                           <select name="xml[UF]" id="UF" class="form-control">
+=======
+>>>>>>> c5c9e6fa1ca0c29dcbc318d3b7296f339d91eed5
                           </select>
                       </div>
                     </div>
