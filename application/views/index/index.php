@@ -126,29 +126,18 @@
                         <input type="text" class="form-control" placeholder="Cep">
                       </div>
                       <div class="form-group col-md-3">
-<<<<<<< HEAD
-=======
-
-
                         <label for="country">Country: </label>
                           <?php echo form_dropdown('country_id', $countries, '#', 'id="country"'); ?><br />
                           <?php $cities['#'] = 'Please Select'; ?>
                         <label for="city">City: </label>
                           <?php echo form_dropdown('city_id', $cities, '#', 'id="cities"'); ?><br />
-
-
->>>>>>> ca2d55bbe54b1d76a2e1d1612c5655bd9f8492da
                         <label for="uf">UF</label>
                           <select class="form-control" name="xml[uf]">
                             <?php foreach($ufList as $state): ?>
                               <option value="<?= $state['id_estado'] ?>"><?= $state['uf'] ?></option>
                             <?php endforeach;?>
-<<<<<<< HEAD
                         <label for="UF">UF</label>
                           <select name="xml[UF]" id="UF" class="form-control">
-                            
-=======
->>>>>>> ca2d55bbe54b1d76a2e1d1612c5655bd9f8492da
                           </select>
                       </div>
                     </div>
@@ -181,21 +170,18 @@
                 <div class="col-md-12">
                   <div class="row">
                     <div class="form-group col-md-12">
-<<<<<<< HEAD
                       <label for="xProd" >Descrição</label>
                       <input name="xml[xProd]" id="xProd" type="text" class="form-control" placeholder="Descrição">
                     </div>                    
                     <div class="form-group col-md-6">
                       <label for="cProd">Código</label>
                       <input name="xml[cProd]" id="cProd" type="text" class="form-control" placeholder="Código">
-=======
                       <label>Descrição</label>
                       <input type="text" class="form-control" placeholder="Descrição">
                     </div>
                     <div class="form-group col-md-6">
                       <label>Código</label>
                       <input type="text" class="form-control" placeholder="Código">
->>>>>>> 4a20b04dbeb6070a33e790f136713eb0bdd85a84
                     </div>
                     <div class="form-group col-md-6">
                       <label for="NCM">NCM</label>
