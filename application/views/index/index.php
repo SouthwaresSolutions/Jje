@@ -42,27 +42,28 @@
               <legend><h3><b>NF-e</b></h3></legend>
 
               <div class="row">
-                <div class="form-group col-md-4">
-                  <label>Tipo de operação</label>
-                  <select name="idDest" class="form-control">
+                <div class="form-group col-md-6">
+                  <label for="idDest">Tipo de operação</label>
+                  <select name="xml[idDest]" id="idDest" class="form-control">
                     <option value="1">Interna</option>
                     <option value="2">Interestadual</option>
                     <option value="3">Exterior</option>
                   </select>
                 </div>
 
-                <div class="form-group col-md-4">
-                  <label>Natureza da operação</label>
-                  <select name="natOp" class="form-control">
+                <div class="form-group col-md-6">
+                  <label for="natOp">Natureza da operação</label>
+                  <select name="xml[natOp]" id="natOp" class="form-control">
                     <option value="Venda de produto">Venda mercadoria</option>
                     <option value="Remessa de mercadoria para brinde">Remessa brinde</option>
                   </select>
                 </div>
-                <div class="form-group col-md-4">
-                  <label>Forma de pagamento</label>
-                  <select name="indPag" class="form-control">
+                <div class="form-group col-md-6">
+                  <label for="indPag" >Forma de pagamento</label>
+                  <select name="xml[indPag]" id="indPag" class="form-control">
                     <option value="0">À vista</option>
-                    <option value="1">A prazo</option>
+                    <option value="1">À prazo</option>
+                    <option value="2">Outros</option>
                   </select>
                 </div>
               </div>
@@ -83,22 +84,21 @@
                     <legend><h4>Identificação</h4></legend>
                       <div class="row">
                         <div class="form-group col-md-6">
-                          <label>Tipo de operação</label>
-                          <select class="form-control">
-                            <option>Interna</option>
-                            <option>Interestadual</option>
-                            <option>Exterior</option>
+                          <label for="typeDoc" >Tipo de Documentação</label>
+                          <select name="xml[typeDoc]" id="typeDoc" class="form-control">
+                            <option value="1">CPF</option>
+                            <option value="2">CNPJ</option>
                           </select>
-                        </div>
+                        </div>                        
                         <div class="form-group col-md-6">
-                          <label>Nº Documento</label>
-                          <input type="text" class="form-control" placeholder="Nº Documento">
+                          <label for="numDoc">Nº Documento</label>
+                          <input name="xml[numDoc]" id="numDoc" type="text" class="form-control" placeholder="Nº Documento">
                         </div>
                       </div>
                       <div class="row">
                         <div class="form-group col-md-12">
-                          <label>Razão Social/Nome</label>
-                          <input type="text" class="form-control" placeholder="Razão Social/Nome">
+                          <label for="xNome" >Razão Social/Nome</label>
+                          <input name="xml[xNome]" id="xNome" type="text" class="form-control" placeholder="Razão Social/Nome">
                         </div>
                       </div>
                     </fieldset>
@@ -108,42 +108,30 @@
                     <legend><h4>Endereço</h4></legend>
                     <div class="row">
                       <div class="form-group col-md-9">
-                        <label>Logradouro</label>
-                        <input type="text" class="form-control" placeholder="Logradouro">
+                        <label for="xLgr" >Logradouro</label>
+                        <input name="xml[xLgr]" id="xLgr" type="text" class="form-control" placeholder="Logradouro">
                       </div>
                       <div class="form-group col-md-3">
-                        <label>Nº</label>
-                        <input type="text" class="form-control" placeholder="Nº">
+                        <label for="nro" >Nº</label>
+                        <input name="xml[nro]" id="nro" type="text" class="form-control" placeholder="Nº">
                       </div>
                     </div>
                     <div class="row">
                       <div class="form-group col-md-5">
-                        <label>Bairro</label>
-                        <input type="text" class="form-control" placeholder="Bairro">
+                        <label for="xBairro" >Bairro</label>
+                        <input name="xml[xBairro]" id="xBairro" type="text" class="form-control" placeholder="Bairro">
                       </div>
                       <div class="form-group col-md-4">
-                        <label>Cep</label>
-                        <input type="text" class="form-control" placeholder="Cep">
+                        <label for="CEP">Cep</label>
+                        <input name="xml[CEP]" id="CEP" type="text" class="form-control" placeholder="Cep">
                       </div>
                       <div class="form-group col-md-3">
-<<<<<<< HEAD
-                        <label for="country">Country: </label>
-                          <?php echo form_dropdown('country_id', $countries, '#', 'id="country"'); ?><br />
-                          <?php $cities['#'] = 'Please Select'; ?>
-                        <label for="city">City: </label>
-                          <?php echo form_dropdown('city_id', $cities, '#', 'id="cities"'); ?><br />
-=======
->>>>>>> c5c9e6fa1ca0c29dcbc318d3b7296f339d91eed5
                         <label for="uf">UF</label>
                           <select class="form-control" name="xml[uf]">
+                            <option>--</option>
                             <?php foreach($ufList as $state): ?>
                               <option value="<?= $state['id_estado'] ?>"><?= $state['uf'] ?></option>
                             <?php endforeach;?>
-<<<<<<< HEAD
-                        <label for="UF">UF</label>
-                          <select name="xml[UF]" id="UF" class="form-control">
-=======
->>>>>>> c5c9e6fa1ca0c29dcbc318d3b7296f339d91eed5
                           </select>
                       </div>
                     </div>
@@ -152,9 +140,10 @@
                         <label>Cidade</label>
                           <select class="form-control">
                             <option>Selecione sua cidade</option>
-                            <!-- Aqui vai o foreach de estados puxados do banco
-                              IMPORTANTE por o database no array de libraries do autoload-->
-                            <option>Torres</option>
+                            <option>--</option>
+                            <?php foreach($cityList as $city): ?>
+                              <option value="<?= $city['id_municipio'] ?>"><?= $city['nome_municipio'] ?></option>
+                            <?php endforeach;?>
                           </select>
                       </div>
                     </div>
@@ -182,12 +171,6 @@
                     <div class="form-group col-md-6">
                       <label for="cProd">Código</label>
                       <input name="xml[cProd]" id="cProd" type="text" class="form-control" placeholder="Código">
-                      <label>Descrição</label>
-                      <input type="text" class="form-control" placeholder="Descrição">
-                    </div>
-                    <div class="form-group col-md-6">
-                      <label>Código</label>
-                      <input type="text" class="form-control" placeholder="Código">
                     </div>
                     <div class="form-group col-md-6">
                       <label for="NCM">NCM</label>

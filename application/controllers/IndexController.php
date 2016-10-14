@@ -5,6 +5,7 @@ class IndexController extends CI_Controller {
 	public function index()
 	{
 		$data['ufList'] = $this->StateModel->getAll();
+		$data['cityList'] = $this->CityModel->getAll();
 		$this->load->view('index/index', $data);
 	}
 	/*
