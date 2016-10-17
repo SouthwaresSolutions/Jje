@@ -1,0 +1,24 @@
+#phpunit related
+phpunit.xml
+
+#composer related
+composer.lock
+vendor/
+composer.phar
+
+#editor related
+.idea
+
+# phar-generation specific
+box.json
+athletic.phar
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
